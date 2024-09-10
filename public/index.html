@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricat</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <img src="images/logo.png" id="logo" alt="logo :3">
+                </li>
+                <li class="navbar__item">
+                    <h1 class="navbar__title">Nutricat</h1>
+                </li>
+                <li class="navbar__item">
+                    <a href="/"class="navbar__links">Recipes</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <article class="main__body">
+        <section class="main__body__container">
+                <h1 id="date"></h1>
+                <div class="food__input body__element" style="height: 100%;">
+                    <h1 class="body__labels">Food Input</h1>
+                    <button id="input__button">Add Food</button>
+                    <div id="food__cards"></div>
+                </div>
+                <div class="carbs body__element">
+                    <h1 class="body__labels">Carbs</h1>
+                    <div class="element__container">
+                        <div id="carb__cat__img" class="cat__div"></div>
+                        <!-- <img src="images/logo.png" class="cat__imgs" id="carb__cat" alt="carb cat"> -->
+                        <div class="goal__info">
+                            <h2 id="carbs__percentage"></h2>
+                            <p id="carbs__amt__goal"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="protein body__element">
+                    <h1 class="body__labels">Protein</h1>
+                    <div class="element__container">
+                        <img src="images/logo.png" class="cat__imgs" id="protein__cat" alt="carb cat">
+                        <div class="goal__info">
+                            <h2 id="protein__percentage"></h2>
+                            <p id="protein__amt__goal"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fats body__element">
+                    <h1 class="body__labels">Fats</h1>
+                    <div class="element__container">
+                        <img src="images/logo.png" class="cat__imgs" id="fats__cat" alt="carb cat">
+                        <div class="goal__info">
+                            <h2 id="fat__percentage"></h2>
+                            <p id="fat__amt__goal"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fiber body__element">
+                    <h1 class="body__labels">Fiber</h1>
+                    <div class="element__container">
+                        <img src="images/logo.png" class="cat__imgs" id="fiber__cat" alt="carb cat">
+                        <div class="goal__info">
+                            <h2 id="fiber__percentage"></h2>
+                            <p id="fiber__amt__goal"></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    </article>
+    <div class="food__modal hidden">
+        <div id="food__modal__content">
+            <button class="modal__close" id="close__button">&times</button>
+            <p>Enter Meal Name:</p>
+            <input class="input__box" id="meal__name__box" type="text" placeholder="eg: breakfast, salad" autocomplete="off">
+            <p>Enter Serving Size:</p>
+            <input class="input__box" id="amt__box" type="text" placeholder="eg: 3g, 1 cup" autocomplete="off" required>
+            <p>Enter Food:</p>
+            <input class="input__box" id="food__box" type="text" placeholder="eg: apple, cereal" autocomplete="off" required>
+            <button id="add__to__meal">Add to Meal</button>
+            <div id="meal__components"></div>
+            <button id="add__food__btn">Add</button>
+        </div>
+    </div>
+    <div class="overlay hidden"></div>
+<script type="module" src="modalOutside.js"></script>
+<script type="module" src="food.js"></script>
+<script type="module" src="modalInside.js"></script>
+<script type="module" src="dates.js"></script>
+<script type="module" src="goals.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
