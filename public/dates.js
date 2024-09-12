@@ -40,7 +40,7 @@ async function displayFoodByDate(functionDate) {
         let food = foods[i];
         console.log(food);
         //call create food element
-        const mealCard = createFoodElement(food.meal_name, food.total_carbs, food.total_protein, food.total_fat, food.total_fiber);
+        const mealCard = createFoodElement(food.meal_name, food.total_carbs, food.total_protein, food.total_fat, food.total_fiber, false);
         document.getElementById('food__cards').appendChild(mealCard);
 
     }

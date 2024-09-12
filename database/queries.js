@@ -10,6 +10,8 @@ const createEmptyMeal = "INSERT INTO meal_totals (meal_name, total_carbs, total_
 const createMealComponent = "INSERT INTO meal_components (component_name, component_carbs, component_protein, component_fat, component_fiber, meal_totals_id) VALUES ($1, $2, $3, $4, $5, $6)";
 
 const deleteMeal = "DELETE FROM meal_totals WHERE id = $1"
+const deleteMealComponent = "DELETE FROM meal_components WHERE meal_totals_id = $1 AND component_name = $2"
+
 const updateMealTotals = "UPDATE meal_totals SET total_carbs = total_carbs + $2, total_protein = total_protein + $3, total_fat = total_fat + $4, total_fiber = total_fiber + $5 WHERE id = $1"
 
 module.exports = {
@@ -26,6 +28,7 @@ module.exports = {
     createMealComponent,
 
     deleteMeal,
+    deleteMealComponent,
 
     updateMealTotals
 }

@@ -1,5 +1,5 @@
-import { deleteMeal } from "./modalInside.js";
-export function createFoodElement(foodTitle, carbs, protein, fat, fiber) {
+import { deleteMeal, deleteMealComponent } from "./modalInside.js";
+export function createFoodElement(foodTitle, carbs, protein, fat, fiber, component) {
 
     let newFoodElement = document.createElement("div");
     newFoodElement.className = "food__element";
@@ -21,6 +21,11 @@ export function createFoodElement(foodTitle, carbs, protein, fat, fiber) {
 
     closeButton.addEventListener('click', async function() {
     
+        // if (component) {
+
+        //     deleteMealComponent()
+
+        // }
         await deleteMeal(foodTitle);
         location.reload();
     

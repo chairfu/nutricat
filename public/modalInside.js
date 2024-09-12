@@ -21,7 +21,7 @@ export async function createFood(sendString, typedMeal) {
             //displayMealComponent
             
             //REFACTOR AFTER DATABASE SETUP
-            const foodElement = createFoodElement(sendString, foodToAdd.carbs, foodToAdd.protein, foodToAdd.fat, foodToAdd.fiber);
+            const foodElement = createFoodElement(sendString, foodToAdd.carbs, foodToAdd.protein, foodToAdd.fat, foodToAdd.fiber, true);
             document.getElementById("meal__components").appendChild(foodElement);
 
 
@@ -134,7 +134,7 @@ export async function deleteMeal(typedMeal) {
         console.log("TRYING TO CALL AXIOS TO DELETE");
         try {
 
-            const response = await axios.delete(`http://localhost:3000/api/v1/database`, 
+            await axios.delete(`http://localhost:3000/api/v1/database`, 
                 {params: {mealId: mealId}})
             console.log("meal and its components have been deleted");
             
@@ -143,6 +143,24 @@ export async function deleteMeal(typedMeal) {
             console.error("problem deleting meal", error);
             
         }
+        
+    }
+
+}
+
+export async function deleteMealComponent(typedMeal, component) {
+
+    const compFk = await getMealId(typedMeal);
+
+    try {
+
+        await axios.delete(`http://localhost:3000/api/v1/database`, 
+            {params: {compFk: compFk, component: component}})
+        console.log("meal component deleted")
+        
+    } catch (error) {
+
+        console.error("problem deleting meal component")
         
     }
 

@@ -14,6 +14,7 @@ router.post('/', controller.createEmptyMeal);
 router.post('/meal_comp/add', controller.createMealComponent);
 
 router.delete('/', controller.deleteMeal);
+router.delete('/meal_comp', controller.deleteMealComponent)
 
 router.put('/', controller.updateMealTotals);
 

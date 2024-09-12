@@ -101,8 +101,6 @@ addFoodButton.addEventListener('click', function() { //need to find a way to NOT
 
         //const foodCard = createFoodElement(typedMeal, totCarbs, totProt, totFat, totFiber);
         //document.getElementById('food__cards').appendChild(foodCard);
-
-        console.log("TODO: call function to make food card");
     
         closeModal();
         location.reload();

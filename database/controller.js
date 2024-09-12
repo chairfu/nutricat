@@ -176,6 +176,23 @@ const deleteMeal = (req, res) => {
 
 }
 
+const deleteMealComponent = (req, res) => {
+
+    const foreign = req.query.compFk;
+    const componentName = req.query.component;
+
+    pool.query(queries.deleteMeal, [foreign, componentName], (error, results) => {
+
+        if (error) throw error;
+        res.status(202).send("delete component successful");
+        console.log(`meal component ${componentName} deleted`)
+
+    })
+
+
+}
+
+//UPDATES
 const updateMealTotals = (req, res) => {
 
     const id = req.body.id;
@@ -221,6 +238,7 @@ module.exports = {
     createMealComponent,
 
     deleteMeal,
+    deleteMealComponent,
 
     updateMealTotals
 

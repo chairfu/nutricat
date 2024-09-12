@@ -75,8 +75,15 @@ function displayGoals() {
 function displayCats() {
 
     const greyCat = new Cat("grey");
-    const carbPath = greyCat.getPath(percentCarbs);
+    document.getElementById('carb__cat__img').innerHTML= `<img src= ${greyCat.getPath(percentCarbs)} class=\"cat__imgs\" id=\"carb__cat\" alt=\"carb cat\"></img>`;
 
-    document.getElementById('carb__cat__img').innerHTML= `<img src= ${carbPath} class=\"cat__imgs\" id=\"carb__cat\" alt=\"carb cat\"></img>`;
+    const orangeCat = new Cat("orange");
+    document.getElementById('fat__cat__img').innerHTML = `<img src= ${orangeCat.getPath(percentFat)} class=\"cat__imgs\" id=\"fat__cat\" alt=\"fat cat\"></img>`;
+
+   const calicoCat = new Cat("calico");
+   document.getElementById('prot__cat__img').innerHTML = `<img src= ${calicoCat.getPath(percentProt)} class=\"cat__imgs\" id=\"prot__cat\" alt=\"protein cat\"></img>`;
+
+   const whiteCat = new Cat("white");
+   document.getElementById('fib__cat__img').innerHTML = `<img src= ${whiteCat.getPath(percentFiber)} class=\"cat__imgs\" id=\"fiber__cat\" alt=\"fiber cat\"></img>`;
 
 }
