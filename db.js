@@ -2,11 +2,11 @@ const Pool = require('pg').Pool;
 
 const pool = new Pool({
 
-    user: "postgres",
-    host: "localhost",
-    database: "nutricat",
-    password: "passwordHand67",
-    port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASS,
+    port: 5432 // Default PostgreSQL port
 
 });
 
